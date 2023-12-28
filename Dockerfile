@@ -1,22 +1,17 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-alpine
+FROM python:3.9-slim
 
 # Install dependencies
-RUN apk add --no-cache \
-    build-base \
-    cmake \
-    git \
-    jpeg-dev \
-    zlib-dev
+RUN apt-get update && apt-get install -y \
+    libopencv-dev \
+    python3-opencv \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory to /app
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY . .
-
-# Install OpenCV
-RUN pip install --no-cache-dir opencv-python-headless
 
 # Install additional Python packages
 RUN pip install --no-cache-dir numpy
