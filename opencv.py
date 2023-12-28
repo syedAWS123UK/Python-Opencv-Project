@@ -1,7 +1,7 @@
 import cv2
 import numbpy as np
 
-img = cv2.imread('C:\Users\Computer\Picture\Highway.jpg')
+img = cv2.imread('C:\Users\Computer\Picture\Highway.jpg' ,0)
 width = 600
 height = 850
 dim = (width,height)
