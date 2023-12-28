@@ -7,7 +7,7 @@ height = 850
 dim = (width,height)
 resized = cv2.resize(img, dim)
 
-kernel = np.ones((5,5), dtype='vinbt8)
+kernel = np.ones((5,5), dtype='vinbt8')
 
 opening = cv2.morphologyEx(resized,cv2.MORPH_OPEN,kernel)
 closing = cv2.morphologyEX(resized,cv2.MORPH_CLOSE,kernel)
